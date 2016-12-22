@@ -15,12 +15,13 @@ class ViewController: UIViewController {
     var filter: AKLowPassFilter?
     var mixer: AKMixer?
     var mainFilterFreq = 2000.0
+    var mainFilterRes = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         osc = AKOscillator(waveform: AKTable(.sawtooth))
-        filter = AKLowPassFilter(osc!, cutoffFrequency: mainFilterFreq)
+        filter = AKLowPassFilter(osc!, cutoffFrequency: mainFilterFreq, resonance: mainFilterRes)
         filter?.start()
         mixer = AKMixer(filter!)
         mixer?.start()
@@ -36,11 +37,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func FilterSlider(_ sender: UISlider) {
-        filter?.stop()
         filter?.cutoffFrequency = pow(10, Double(sender.value))
         mainFilterFreq = (filter?.cutoffFrequency)!
-        filter?.start()
     }
+    
+    @IBAction func ResSlider(_ sender: UISlider) {
+        filter?.resonance = Double(sender.value)
+    }
+    
     
     @IBAction func PlayStop(_ sender: UIButton) {
         

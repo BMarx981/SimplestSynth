@@ -49,18 +49,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VoA-0g-YoS" userLabel="Filter Stack">
-                                <rect key="frame" x="10" y="366.5" width="300" height="58.5"/>
+                                <rect key="frame" x="-36" y="328.5" width="392" height="96.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-Jz-NjA">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="392" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-ly-h3p">
-                                        <rect key="frame" x="-2" y="28.5" width="304" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HlM-O9-Dv9" userLabel="Frequency">
+                                        <rect key="frame" x="-2" y="28.5" width="396" height="31"/>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.7999999999999998" minValue="1.3" maxValue="4.7999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-ly-h3p" userLabel="Resonance">
+                                        <rect key="frame" x="-2" y="66.5" width="396" height="31"/>
                                         <connections>
                                             <action selector="FilterSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="nSe-Wt-ZFI"/>
+                                            <action selector="ResSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="4gR-uL-0VV"/>
                                         </connections>
                                     </slider>
                                 </subviews>
