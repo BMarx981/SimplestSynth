@@ -12,7 +12,23 @@
 		D33F89BB1E0C6BCD0037267A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33F89B91E0C6BCD0037267A /* Main.storyboard */; };
 		D33F89BD1E0C6BCD0037267A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33F89BC1E0C6BCD0037267A /* Assets.xcassets */; };
 		D33F89C01E0C6BCD0037267A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33F89BE1E0C6BCD0037267A /* LaunchScreen.storyboard */; };
+		D33F89C81E0C6BE60037267A /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33F89C71E0C6BE60037267A /* AudioKit.framework */; };
+		D33F89C91E0C6BE60037267A /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D33F89C71E0C6BE60037267A /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D33F89CA1E0C6BE60037267A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D33F89C91E0C6BE60037267A /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D33F89B21E0C6BCD0037267A /* SimpleSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		D33F89BC1E0C6BCD0037267A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33F89BF1E0C6BCD0037267A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D33F89C11E0C6BCD0037267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D33F89C71E0C6BE60037267A /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D33F89C81E0C6BE60037267A /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		D33F89A91E0C6BCD0037267A = {
 			isa = PBXGroup;
 			children = (
+				D33F89C71E0C6BE60037267A /* AudioKit.framework */,
 				D33F89B41E0C6BCD0037267A /* SimpleSynth */,
 				D33F89B31E0C6BCD0037267A /* Products */,
 			);
@@ -74,6 +93,7 @@
 				D33F89AE1E0C6BCD0037267A /* Sources */,
 				D33F89AF1E0C6BCD0037267A /* Frameworks */,
 				D33F89B01E0C6BCD0037267A /* Resources */,
+				D33F89CA1E0C6BE60037267A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +280,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SimpleSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bmarx.SimpleSynth;
@@ -272,6 +296,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SimpleSynth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bmarx.SimpleSynth;
