@@ -36,11 +36,6 @@ class ViewController: UIViewController {
         osc?.frequency = pow(10, Double(sender.value))
     }
     
-    @IBAction func FilterSlider(_ sender: UISlider) {
-        filter?.cutoffFrequency = pow(10, Double(sender.value))
-        mainFilterFreq = (filter?.cutoffFrequency)!
-    }
-    
     @IBAction func ResSlider(_ sender: UISlider) {
         filter?.resonance = Double(sender.value)
     }
