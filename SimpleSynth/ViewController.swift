@@ -11,7 +11,9 @@ import AudioKit
 
 class ViewController: UIViewController {
     
-    var osc: AKOscillator?
+    var osc1: AKOscillator?
+    var osc2: AKOscillator?
+    var oscMixer: AKMixer?
     var filter: AKLowPassFilter?
     var mixer: AKMixer?
     var mainFilterFreq = 2000.0
@@ -20,8 +22,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        osc = AKOscillator(waveform: AKTable(.sawtooth))
-        filter = AKLowPassFilter(osc!, cutoffFrequency: mainFilterFreq, resonance: mainFilterRes)
+        osc1 = AKOscillator(waveform: AKTable(.sawtooth))
+        osc2 = AKOscillator(waveform: AKTable(.square))
+        oscMixer = AKMixer(osc1!, osc2!)
+        filter = AKLowPassFilter(oscMixer!, cutoffFrequency: mainFilterFreq, resonance: mainFilterRes)
         filter?.start()
         mixer = AKMixer(filter!)
         mixer?.start()
@@ -33,7 +37,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func OscSlider(_ sender: UISlider) {
-        osc?.frequency = pow(10, Double(sender.value))
+        osc1?.frequency = pow(10, Double(sender.value))
+        osc2?.frequency = pow(10, Double(sender.value))
     }
     
     @IBAction func ResSlider(_ sender: UISlider) {
@@ -43,13 +48,15 @@ class ViewController: UIViewController {
     
     @IBAction func PlayStop(_ sender: UIButton) {
         
-        if (osc?.isPlaying)! {
-            osc?.stop()
+        if (osc1?.isPlaying)! {
+            osc1?.stop()
+            osc2?.stop()
             sender.setTitle("Play", for: .normal)
             sender.setTitleColor(UIColor.blue, for: .normal)
 
         } else {
-            osc?.start()
+            osc1?.start()
+            osc2?.start()
             sender.setTitle("Stop", for: .normal)
             sender.setTitleColor(UIColor.red, for: .normal)
         }
