@@ -51,7 +51,6 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3.0699999999999998" minValue="1.3" maxValue="4.7999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-ly-h3p" userLabel="Resonance">
                                         <rect key="frame" x="-2" y="28.5" width="196" height="31"/>
                                         <connections>
-                                            <action selector="FilterSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="nSe-Wt-ZFI"/>
                                             <action selector="ResSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="4gR-uL-0VV"/>
                                         </connections>
                                     </slider>
