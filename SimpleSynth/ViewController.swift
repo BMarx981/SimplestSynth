@@ -45,6 +45,17 @@ class ViewController: UIViewController {
         filter?.cutoffFrequency = pow(10,Double(sender.value))
     }
     
+    @IBAction func OscSelector(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                osc1?.amplitude = 1.0
+                osc2?.amplitude = 0.0
+            case 1:
+                osc1?.amplitude = 0.0
+                osc2?.amplitude = 1.0
+            default: break
+        }//end switch
+    }
     
     @IBAction func PlayStop(_ sender: UIButton) {
         

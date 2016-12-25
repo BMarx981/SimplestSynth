@@ -73,21 +73,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-EH-Cuu">
+                                <rect key="frame" x="100" y="59" width="121" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="H4t-Zh-cwf"/>
+                                    <constraint firstAttribute="height" constant="28" id="Hku-Wa-88g"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Saw"/>
+                                    <segment title="Square"/>
+                                </segments>
+                                <connections>
+                                    <action selector="OscSelector:" destination="BYZ-38-t0r" eventType="valueChanged" id="ihY-bB-Fgg"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PTo-7c-6iC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="48" id="0zm-Px-BPQ"/>
+                            <constraint firstItem="LWC-EH-Cuu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="69e-1r-IZa"/>
                             <constraint firstItem="cY0-T9-fLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7XR-YC-8q5"/>
                             <constraint firstItem="fIZ-ov-YmV" firstAttribute="top" secondItem="cpp-7n-vpa" secondAttribute="bottom" constant="10" id="8EI-vb-lVE"/>
                             <constraint firstItem="PTo-7c-6iC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Qw-aT-hlb"/>
                             <constraint firstItem="fIZ-ov-YmV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8zJ-li-VtY"/>
                             <constraint firstItem="wNk-ly-h3p" firstAttribute="top" secondItem="fIZ-ov-YmV" secondAttribute="bottom" constant="92" id="9VY-l9-vhP"/>
                             <constraint firstItem="fIZ-ov-YmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J4k-yq-8We"/>
+                            <constraint firstItem="PTo-7c-6iC" firstAttribute="top" secondItem="LWC-EH-Cuu" secondAttribute="bottom" constant="28" id="Pf0-eh-EBW"/>
                             <constraint firstItem="PTo-7c-6iC" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="64" id="Rh7-Co-8MS"/>
                             <constraint firstItem="VoA-0g-YoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="48" id="aSU-Jx-0CN"/>
                             <constraint firstItem="VoA-0g-YoS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iUs-3S-LIt"/>
+                            <constraint firstItem="LWC-EH-Cuu" firstAttribute="leading" secondItem="cY0-T9-fLb" secondAttribute="trailing" constant="-121" id="jiG-2w-TmU"/>
                             <constraint firstItem="cY0-T9-fLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oZv-rG-TxE"/>
                             <constraint firstItem="cY0-T9-fLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oqo-fD-CTr"/>
+                            <constraint firstItem="LWC-EH-Cuu" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="8" id="vDZ-uK-J0d"/>
                         </constraints>
                     </view>
                 </viewController>
