@@ -17,10 +17,12 @@ class ViewController: UIViewController {
     var osc4: AKOscillator?
     var oscMixer: AKMixer?
     var lp: AKLowPassFilter?
+    var lpMixer: AKMixer?
     var bp: AKBandPassFilter?
+    var bpMixer: AKMixer?
     var hp: AKHighPassFilter?
+    var hpMixer: AKMixer?
     var filter: AKMixer?
-    var mixer: AKMixer?
     var mainFilterFreq = 2000.0
     var mainFilterRes = 0.0
 
@@ -34,14 +36,15 @@ class ViewController: UIViewController {
         oscMixer = AKMixer(osc1!, osc2!, osc3!, osc4!)
         
         lp = AKLowPassFilter(oscMixer!, cutoffFrequency: mainFilterFreq)
+        lpMixer = AKMixer(lp!)
         bp = AKBandPassFilter(oscMixer!, centerFrequency: mainFilterFreq)
+        bpMixer = AKMixer(bp!)
         hp = AKHighPassFilter(oscMixer!, cutoffFrequency: mainFilterFreq)
-        filter = AKMixer(lp!,bp!,hp!)
+        hpMixer = AKMixer(hp!)
+        filter = AKMixer(lpMixer!,bpMixer!,hpMixer!)
         filter?.start()
-        mixer = AKMixer(filter!)
-        mixer?.start()
         
-        AudioKit.output = mixer
+        AudioKit.output = filter
         AudioKit.start()
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -54,11 +57,12 @@ class ViewController: UIViewController {
         osc4?.frequency = pow(10, Double(sender.value))
     }
     
-    @IBAction func ResSlider(_ sender: UISlider) {
+    @IBAction func FilterSlider(_ sender: UISlider) {
         lp?.cutoffFrequency = pow(10,Double(sender.value))
         bp?.centerFrequency = pow(10,Double(sender.value))
         hp?.cutoffFrequency = pow(10,Double(sender.value))
     }
+    
     
     @IBAction func OscSelector(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -87,24 +91,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func FilterSelector(_ sender: UISegmentedControl) {
+        lp?.start()
+        hp?.start()
+        hp?.start()
         switch sender.selectedSegmentIndex {
             //low pass
             case 0:
-                lp?.start()
-                bp?.stop()
-                hp?.stop()
+                lpMixer?.volume = 1.0
+                bpMixer?.volume = 0.0
+                hpMixer?.volume = 0.0
             //band pass
             case 1:
-                lp?.stop()
-                bp?.start()
-                hp?.stop()
+                lpMixer?.volume = 0.0
+                bpMixer?.volume = 1.0
+                hpMixer?.volume = 0.0
             //high pass
             case 2:
-                lp?.stop()
-                bp?.stop()
-                hp?.start()
+                lpMixer?.volume = 0.0
+                bpMixer?.volume = 0.0
+                hpMixer?.volume = 1.0
             //None. bypass filters
             case 3:
+                print("bypass bull shit")
                 lp?.bypass()
                 bp?.stop()
                 hp?.stop()
