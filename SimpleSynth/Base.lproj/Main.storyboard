@@ -73,47 +73,63 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-EH-Cuu">
-                                <rect key="frame" x="288.5" y="59" width="192" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="192" id="H4t-Zh-cwf"/>
-                                    <constraint firstAttribute="height" constant="28" id="Hku-Wa-88g"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Saw"/>
-                                    <segment title="Square"/>
-                                    <segment title="Triangle"/>
-                                    <segment title="Sine"/>
-                                </segments>
-                                <connections>
-                                    <action selector="OscSelector:" destination="BYZ-38-t0r" eventType="valueChanged" id="ihY-bB-Fgg"/>
-                                </connections>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qG5-nE-BhY" userLabel="Selector Stack">
+                                <rect key="frame" x="229" y="59" width="311" height="56"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-EH-Cuu">
+                                        <rect key="frame" x="59.5" y="0.0" width="192" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="192" id="H4t-Zh-cwf"/>
+                                            <constraint firstAttribute="height" constant="28" id="Hku-Wa-88g"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Saw"/>
+                                            <segment title="Square"/>
+                                            <segment title="Triangle"/>
+                                            <segment title="Sine"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="OscSelector:" destination="BYZ-38-t0r" eventType="valueChanged" id="ihY-bB-Fgg"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2q5-Ed-rvY">
+                                        <rect key="frame" x="0.0" y="28" width="311" height="29"/>
+                                        <segments>
+                                            <segment title="Low Pass"/>
+                                            <segment title="Band Pass"/>
+                                            <segment title="High Pass"/>
+                                            <segment title="None"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="FilterSelector:" destination="BYZ-38-t0r" eventType="valueChanged" id="tiy-lP-0xP"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PTo-7c-6iC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="48" id="0zm-Px-BPQ"/>
-                            <constraint firstItem="LWC-EH-Cuu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="69e-1r-IZa"/>
                             <constraint firstItem="cY0-T9-fLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7XR-YC-8q5"/>
                             <constraint firstItem="fIZ-ov-YmV" firstAttribute="top" secondItem="cpp-7n-vpa" secondAttribute="bottom" constant="10" id="8EI-vb-lVE"/>
                             <constraint firstItem="PTo-7c-6iC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Qw-aT-hlb"/>
                             <constraint firstItem="fIZ-ov-YmV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8zJ-li-VtY"/>
                             <constraint firstItem="wNk-ly-h3p" firstAttribute="top" secondItem="fIZ-ov-YmV" secondAttribute="bottom" constant="92" id="9VY-l9-vhP"/>
+                            <constraint firstItem="qG5-nE-BhY" firstAttribute="leading" secondItem="PTo-7c-6iC" secondAttribute="trailing" constant="-471" id="BEA-23-SBh"/>
+                            <constraint firstItem="qG5-nE-BhY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DMt-Tb-Ps5"/>
                             <constraint firstItem="fIZ-ov-YmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J4k-yq-8We"/>
-                            <constraint firstItem="PTo-7c-6iC" firstAttribute="top" secondItem="LWC-EH-Cuu" secondAttribute="bottom" constant="28" id="Pf0-eh-EBW"/>
                             <constraint firstItem="PTo-7c-6iC" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="64" id="Rh7-Co-8MS"/>
                             <constraint firstItem="VoA-0g-YoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="48" id="aSU-Jx-0CN"/>
+                            <constraint firstItem="qG5-nE-BhY" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="8" symbolic="YES" id="cdR-80-Rau"/>
                             <constraint firstItem="VoA-0g-YoS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iUs-3S-LIt"/>
-                            <constraint firstItem="LWC-EH-Cuu" firstAttribute="leading" secondItem="cY0-T9-fLb" secondAttribute="trailing" constant="-156.5" id="jiG-2w-TmU"/>
                             <constraint firstItem="cY0-T9-fLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oZv-rG-TxE"/>
                             <constraint firstItem="cY0-T9-fLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oqo-fD-CTr"/>
-                            <constraint firstItem="LWC-EH-Cuu" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="8" id="vDZ-uK-J0d"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="136.26760563380282"/>
+            <point key="canvasLocation" x="134.375" y="135.9375"/>
         </scene>
     </scenes>
 </document>

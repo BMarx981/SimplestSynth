@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     var osc3: AKOscillator?
     var osc4: AKOscillator?
     var oscMixer: AKMixer?
-    var filter: AKLowPassFilter?
+    var lp: AKLowPassFilter?
+    var bp: AKBandPassFilter?
+    var hp: AKHighPassFilter?
+    var filter: AKMixer?
     var mixer: AKMixer?
     var mainFilterFreq = 2000.0
     var mainFilterRes = 0.0
@@ -29,7 +32,11 @@ class ViewController: UIViewController {
         osc3 = AKOscillator(waveform: AKTable(.triangle))
         osc4 = AKOscillator(waveform: AKTable(.sine))
         oscMixer = AKMixer(osc1!, osc2!, osc3!, osc4!)
-        filter = AKLowPassFilter(oscMixer!, cutoffFrequency: mainFilterFreq, resonance: mainFilterRes)
+        
+        lp = AKLowPassFilter(oscMixer!, cutoffFrequency: mainFilterFreq)
+        bp = AKBandPassFilter(oscMixer!, centerFrequency: mainFilterFreq)
+        hp = AKHighPassFilter(oscMixer!, cutoffFrequency: mainFilterFreq)
+        filter = AKMixer(lp!,bp!,hp!)
         filter?.start()
         mixer = AKMixer(filter!)
         mixer?.start()
@@ -48,7 +55,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func ResSlider(_ sender: UISlider) {
-        filter?.cutoffFrequency = pow(10,Double(sender.value))
+        lp?.cutoffFrequency = pow(10,Double(sender.value))
+        bp?.centerFrequency = pow(10,Double(sender.value))
+        hp?.cutoffFrequency = pow(10,Double(sender.value))
     }
     
     @IBAction func OscSelector(_ sender: UISegmentedControl) {
@@ -77,6 +86,31 @@ class ViewController: UIViewController {
         }//end switch
     }
     
+    @IBAction func FilterSelector(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            //low pass
+            case 0:
+                lp?.start()
+                bp?.stop()
+                hp?.stop()
+            //band pass
+            case 1:
+                lp?.stop()
+                bp?.start()
+                hp?.stop()
+            //high pass
+            case 2:
+                lp?.stop()
+                bp?.stop()
+                hp?.start()
+            //None. bypass filters
+            case 3:
+                lp?.bypass()
+                bp?.stop()
+                hp?.stop()
+            default: break
+        }
+    }
     @IBAction func PlayStop(_ sender: UIButton) {
         
         if (osc1?.isPlaying)! {
