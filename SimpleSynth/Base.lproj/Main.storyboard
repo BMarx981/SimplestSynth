@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PTo-7c-6iC" userLabel="Osc Stack">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PTo-7c-6iC" userLabel="Osc Stack">
                                 <rect key="frame" x="24" y="123" width="288" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Osc Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPH-LT-kpw">
@@ -31,7 +31,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1.4099999999999999" maxValue="4.5999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="cpp-7n-vpa">
+                                    <slider opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1.4099999999999999" maxValue="4.2999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="cpp-7n-vpa">
                                         <rect key="frame" x="-2" y="32.5" width="292" height="58.5"/>
                                         <connections>
                                             <action selector="OscSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="xeq-dF-ikr"/>
@@ -79,7 +79,7 @@
                                             <action selector="OscSelector:" destination="BYZ-38-t0r" eventType="valueChanged" id="ihY-bB-Fgg"/>
                                         </connections>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2q5-Ed-rvY">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="2q5-Ed-rvY">
                                         <rect key="frame" x="0.0" y="27.5" width="311" height="28.5"/>
                                         <segments>
                                             <segment title="Low Pass"/>
