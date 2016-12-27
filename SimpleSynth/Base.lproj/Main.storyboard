@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,61 +19,56 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PTo-7c-6iC" userLabel="Osc Stack">
-                                <rect key="frame" x="68" y="115" width="632" height="62.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PTo-7c-6iC" userLabel="Osc Stack">
+                                <rect key="frame" x="24" y="123" width="288" height="90"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Osc Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPH-LT-kpw">
-                                        <rect key="frame" x="0.0" y="0.0" width="632" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Osc Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPH-LT-kpw">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.8500000000000001" minValue="1.3100000000000001" maxValue="4.7999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="cpp-7n-vpa">
-                                        <rect key="frame" x="-2" y="32.5" width="636" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1.4099999999999999" maxValue="4.5999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="cpp-7n-vpa">
+                                        <rect key="frame" x="-2" y="32.5" width="292" height="58.5"/>
                                         <connections>
                                             <action selector="OscSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="xeq-dF-ikr"/>
                                         </connections>
                                     </slider>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-ov-YmV">
-                                <rect key="frame" x="68" y="493" width="632" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-ov-YmV">
+                                <rect key="frame" x="62" y="221" width="196" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="PlayStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hiH-OH-ops"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VoA-0g-YoS" userLabel="Filter Stack">
-                                <rect key="frame" x="68" y="595" width="632" height="59"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VoA-0g-YoS" userLabel="Filter Stack">
+                                <rect key="frame" x="62" y="323" width="196" height="58.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Filter Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-Jz-NjA">
-                                        <rect key="frame" x="0.0" y="0.0" width="632" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1K-Jz-NjA">
+                                        <rect key="frame" x="0.0" y="0.0" width="196" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3.0699999999999998" minValue="1.3" maxValue="4.7999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-ly-h3p" userLabel="Resonance">
-                                        <rect key="frame" x="-2" y="28.5" width="636" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3.0699999999999998" minValue="1.3" maxValue="4.7999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-ly-h3p" userLabel="Resonance">
+                                        <rect key="frame" x="-2" y="28.5" width="200" height="31"/>
                                         <connections>
                                             <action selector="FilterSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="TfT-e4-8su"/>
                                         </connections>
                                     </slider>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qG5-nE-BhY" userLabel="Selector Stack">
-                                <rect key="frame" x="229" y="59" width="311" height="56"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qG5-nE-BhY" userLabel="Selector Stack">
+                                <rect key="frame" x="5" y="58" width="311" height="55"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-EH-Cuu">
-                                        <rect key="frame" x="59.5" y="0.0" width="192" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="192" id="H4t-Zh-cwf"/>
-                                            <constraint firstAttribute="height" constant="28" id="Hku-Wa-88g"/>
-                                        </constraints>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="255" placeholderIntrinsicHeight="25" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-EH-Cuu">
+                                        <rect key="frame" x="28" y="0.0" width="255" height="28.5"/>
                                         <segments>
                                             <segment title="Saw"/>
                                             <segment title="Square"/>
@@ -85,7 +80,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2q5-Ed-rvY">
-                                        <rect key="frame" x="0.0" y="28" width="311" height="29"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="311" height="28.5"/>
                                         <segments>
                                             <segment title="Low Pass"/>
                                             <segment title="Band Pass"/>
@@ -97,9 +92,12 @@
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="2q5-Ed-rvY" firstAttribute="height" secondItem="LWC-EH-Cuu" secondAttribute="height" id="3M2-59-CDO"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SimpleSynth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cY0-T9-fLb">
-                                <rect key="frame" x="323" y="20" width="122" height="31"/>
+                                <rect key="frame" x="99" y="22" width="122" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="4x5-dH-I4Y"/>
                                 </constraints>
@@ -110,16 +108,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PTo-7c-6iC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="48" id="0zm-Px-BPQ"/>
-                            <constraint firstItem="cY0-T9-fLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7XR-YC-8q5"/>
-                            <constraint firstItem="PTo-7c-6iC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Qw-aT-hlb"/>
-                            <constraint firstItem="qG5-nE-BhY" firstAttribute="leading" secondItem="PTo-7c-6iC" secondAttribute="trailing" constant="-471" id="BEA-23-SBh"/>
+                            <constraint firstItem="PTo-7c-6iC" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="70" id="3YM-aK-tA9"/>
+                            <constraint firstItem="cY0-T9-fLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="6c3-MU-eAg"/>
+                            <constraint firstAttribute="trailing" secondItem="qG5-nE-BhY" secondAttribute="trailing" constant="4" id="7gb-Z2-MFE"/>
+                            <constraint firstItem="fIZ-ov-YmV" firstAttribute="top" secondItem="PTo-7c-6iC" secondAttribute="bottom" constant="8" id="9sh-2d-rkx"/>
+                            <constraint firstItem="qG5-nE-BhY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="AYb-fh-xsI"/>
+                            <constraint firstItem="VoA-0g-YoS" firstAttribute="leading" secondItem="fIZ-ov-YmV" secondAttribute="leading" id="C2k-Zg-KJg"/>
                             <constraint firstItem="qG5-nE-BhY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DMt-Tb-Ps5"/>
-                            <constraint firstItem="PTo-7c-6iC" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="64" id="Rh7-Co-8MS"/>
-                            <constraint firstItem="VoA-0g-YoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="48" id="aSU-Jx-0CN"/>
-                            <constraint firstItem="qG5-nE-BhY" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="8" symbolic="YES" id="cdR-80-Rau"/>
+                            <constraint firstItem="VoA-0g-YoS" firstAttribute="top" secondItem="fIZ-ov-YmV" secondAttribute="bottom" constant="64" id="KpF-zr-aTi"/>
+                            <constraint firstItem="PTo-7c-6iC" firstAttribute="top" secondItem="qG5-nE-BhY" secondAttribute="bottom" constant="8" id="UfT-7J-Tjj"/>
+                            <constraint firstItem="fIZ-ov-YmV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vxb-O5-8UI"/>
+                            <constraint firstItem="PTo-7c-6iC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="XvC-yU-aZz"/>
+                            <constraint firstItem="qG5-nE-BhY" firstAttribute="top" secondItem="cY0-T9-fLb" secondAttribute="bottom" constant="7" id="cdR-80-Rau"/>
+                            <constraint firstAttribute="trailing" secondItem="PTo-7c-6iC" secondAttribute="trailing" constant="8" id="d0b-jd-IFL"/>
+                            <constraint firstItem="fIZ-ov-YmV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="eiv-8l-rP3"/>
+                            <constraint firstItem="VoA-0g-YoS" firstAttribute="trailing" secondItem="fIZ-ov-YmV" secondAttribute="trailing" id="hO7-AU-LEH"/>
                             <constraint firstItem="VoA-0g-YoS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iUs-3S-LIt"/>
-                            <constraint firstItem="cY0-T9-fLb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oZv-rG-TxE"/>
                             <constraint firstItem="cY0-T9-fLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oqo-fD-CTr"/>
                         </constraints>
                     </view>

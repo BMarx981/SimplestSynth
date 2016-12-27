@@ -11,11 +11,14 @@ import AudioKit
 
 class ViewController: UIViewController {
     
+    //Oscillators setup
     var osc1: AKOscillator?
     var osc2: AKOscillator?
     var osc3: AKOscillator?
     var osc4: AKOscillator?
     var oscMixer: AKMixer?
+    
+    //Filters and filter mixer setup
     var lp: AKLowPassFilter?
     var lpMixer: AKMixer?
     var bp: AKBandPassFilter?
@@ -92,7 +95,7 @@ class ViewController: UIViewController {
     
     @IBAction func FilterSelector(_ sender: UISegmentedControl) {
         lp?.start()
-        hp?.start()
+        bp?.start()
         hp?.start()
         switch sender.selectedSegmentIndex {
             //low pass
@@ -112,13 +115,13 @@ class ViewController: UIViewController {
                 hpMixer?.volume = 1.0
             //None. bypass filters
             case 3:
-                print("bypass bull shit")
                 lp?.bypass()
                 bp?.stop()
                 hp?.stop()
             default: break
         }
     }
+    
     @IBAction func PlayStop(_ sender: UIButton) {
         
         if (osc1?.isPlaying)! {
